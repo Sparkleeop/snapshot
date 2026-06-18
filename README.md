@@ -1,27 +1,83 @@
 # Snapshot
 
-Snapshot is a code snapshotting tool, which lets you create snapshots of your whole codebase and then restore it whenever you wanna, essentially works like git but simpler.
+Snapshot is a lightweight code snapshotting tool that allows you to save and restore your entire project at any point in time.
 
-## Basic Commands
+Think of it as a simpler alternative to Git when you just want quick save points without branches, commits, remotes, or repositories.
 
-- snap init - initializes your project (only needs to be run once in the project root)
-- snap save <message> - saves the snapshot of your project
-- snap list - lists all the saves
-- snap restore <snap ID> - lets you restore your project to a certain save. Snap ID can be found in ``snap list``
-- snap info <snap ID> - shows the info of a certain save. Snap ID can be found in ``snap list``
+## Features
 
-## Snap Ignore
+* Save snapshots of your entire project
+* Restore previous snapshots at any time
+* Ignore files and directories using `.snapignore`
+* View snapshot history
+* View detailed snapshot information
+* Clean restore mode for exact project restoration
+* Rich terminal interface
 
-- Lets you ignore certain files being included in the save. (as of now you cannot add /<dirname>, just mention the directory name.)
+## Installation
 
-For example:
+```bash
+pip install -r requirements.txt
 ```
+
+## Usage
+
+Initialize Snapshot in your project root:
+
+```bash
+snap init
+```
+
+Create a snapshot:
+
+```bash
+snap save "before authentication rewrite"
+```
+
+List all snapshots:
+
+```bash
+snap list
+```
+
+View information about a snapshot:
+
+```bash
+snap info 3
+```
+
+Restore a snapshot:
+
+```bash
+snap restore 3
+```
+
+Perform a clean restore (removes existing project files before restoring):
+
+```bash
+snap restore 3 --clean
+```
+
+## .snapignore
+
+Use a `.snapignore` file in your project root to exclude files and directories from snapshots.
+
+Example:
+
+```text
 .env
-__pycache__
 venv
-
+__pycache__
+node_modules
 ```
 
-## Future Additions
-- snap delete <id> - Lets you delete a certain save.
-- snap diff <id1> <id2> - Lets you see the difference between two saves.
+## Roadmap
+
+* [ ] Delete snapshots (`snap delete <id>`)
+* [ ] Compare snapshots (`snap diff <id1> <id2>`)
+* [ ] Snapshot tags
+* [ ] Snapshot search
+* [ ] Snapshot export/import
+
+```
+```
