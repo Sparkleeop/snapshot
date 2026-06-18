@@ -17,6 +17,7 @@ save_parser.add_argument("message")
 
 restore_parser = subparsers.add_parser("restore")
 restore_parser.add_argument("snap_id", type=int)
+restore_parser.add_argument("--clean", action="store_true")
 
 args = parser.parse_args()
 
@@ -27,7 +28,7 @@ elif args.command == "save":
     snapshot(args.message)
 
 elif args.command == "restore":
-    restore(args.snap_id)
+    restore(args.snap_id, clean=args.clean)
 
 elif args.command == "list":
     list_snap()

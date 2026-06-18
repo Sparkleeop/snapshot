@@ -1,6 +1,12 @@
 from config import *
 from utils.snapignore import load_ignore_patterns, should_ignore
-import zipfile
+import zipfile, shutil
+from pathlib import Path
+
+SYSTEM_PRESERVE = {
+    ".snap",
+    ".git"
+}
 
 def zip_dir(dir_path, zip_name):
 
@@ -23,3 +29,17 @@ def unzip_dir(zip_path):
     # Extract all files to a directory
     with zipfile.ZipFile(f'{zip_path}', 'r') as zip_ref:
         zip_ref.extractall(current_dir)
+
+def clear_contents(dir_path):
+    folder = Path(dir_path)
+
+    for item in folder.iterdir():
+
+        if item.name in SYSTEM_PRESERVE:
+            continue
+
+        if item.is_file() or item.is_symlink():
+            item.unlink()
+
+        elif item.is_dir():
+            shutil.rmtree(item)
