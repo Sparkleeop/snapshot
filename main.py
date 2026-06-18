@@ -4,8 +4,13 @@ from commands.init import *
 from commands.list_snap import *
 from commands.save_snap import *
 from commands.restore_snap import *
+from utils.console import print_help
 
-parser = argparse.ArgumentParser(prog="snap", description="Project snapshot manager")
+parser = argparse.ArgumentParser(
+    prog="snap",
+    description="Project snapshot manager",
+    add_help=False,
+)
 
 subparsers = parser.add_subparsers(dest="command")
 
@@ -34,4 +39,4 @@ elif args.command == "list":
     list_snap()
 
 else:
-    parser.print_help()
+    print_help()
