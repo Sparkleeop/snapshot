@@ -8,6 +8,7 @@ Snapshot is a code snapshotting tool, which lets you create snapshots of your wh
 - snap save <message> - saves the snapshot of your project
 - snap list - lists all the saves
 - snap restore <snap ID> - lets you restore your project to a certain save. Snap ID can be found in ``snap list``
+- snap info <snap ID> - shows the info of a certain save. Snap ID can be found in ``snap list``
 
 ## Snap Ignore
 
@@ -20,3 +21,7 @@ __pycache__
 venv
 
 ```
+
+## Future Additions
+- snap delete <id> - Lets you delete a certain save.
+- snap diff <id1> <id2> - Lets you see the difference between two saves.

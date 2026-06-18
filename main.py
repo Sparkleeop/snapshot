@@ -4,6 +4,7 @@ from commands.init import *
 from commands.list_snap import *
 from commands.save_snap import *
 from commands.restore_snap import *
+from commands.info_snap import *
 from utils.console import print_help
 
 parser = argparse.ArgumentParser(
@@ -24,6 +25,9 @@ restore_parser = subparsers.add_parser("restore")
 restore_parser.add_argument("snap_id", type=int)
 restore_parser.add_argument("--clean", action="store_true")
 
+info_parser = subparsers.add_parser("info")
+info_parser.add_argument("snap_id", type=int)
+
 args = parser.parse_args()
 
 if args.command == "init":
@@ -34,6 +38,9 @@ elif args.command == "save":
 
 elif args.command == "restore":
     restore(args.snap_id, clean=args.clean)
+
+elif args.command == "info":
+    show_info(args.snap_id)
 
 elif args.command == "list":
     list_snap()
