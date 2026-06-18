@@ -75,9 +75,8 @@ node_modules
 
 * [ ] Delete snapshots (`snap delete <id>`)
 * [ ] Compare snapshots (`snap diff <id1> <id2>`)
-* [ ] Snapshot tags
-* [ ] Snapshot search
 * [ ] Snapshot export/import
+* [ ] Automatic snapshots
+* [ ] Head snapshot
 
-```
 ```
