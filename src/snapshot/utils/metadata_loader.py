@@ -1,4 +1,4 @@
-from config import *
+from snapshot.config import snap_dir
 import json
 
 

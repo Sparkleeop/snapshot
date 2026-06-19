@@ -16,9 +16,21 @@ Think of it as a simpler alternative to Git when you just want quick save points
 
 ## Installation
 
+### From PyPI
+
 ```bash
-pip install -r requirements.txt
+pip install snapshot-cli
 ```
+
+### From source (development)
+
+```bash
+git clone https://github.com/Sparkleeop/snapshot.git
+cd snapshot
+pip install -e .
+```
+
+This installs the `snap` command globally in your environment.
 
 ## Usage
 
@@ -89,11 +101,19 @@ __pycache__
 node_modules
 ```
 
+## Publishing to PyPI
+
+Build and publish:
+
+```bash
+pip install build twine
+python -m build
+twine upload dist/*
+```
+
 ## Roadmap
 
 * [ ] Compare snapshots (`snap diff <id1> <id2>`)
 * [ ] Snapshot export/import
 * [ ] Automatic snapshots
 * [ ] Head snapshot
-
-```

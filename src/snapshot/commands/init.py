@@ -1,5 +1,5 @@
-from config import os, snap_dir, snapshots_dir, metadata_default
-from utils.console import success, warning
+from snapshot.config import os, snap_dir, snapshots_dir, metadata_default
+from snapshot.utils.console import success, warning
 import json
 
 def init():

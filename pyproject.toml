@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "snapshot-cli"
+version = "1.0.0"
+description = "A lightweight project snapshot & versioning tool for developers."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Sparkleeop" },
+]
+keywords = ["snapshot", "versioning", "backup", "cli", "developer-tools"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Version Control",
+    "Topic :: System :: Archiving :: Backup",
+]
+
+dependencies = [
+    "rich>=13.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Sparkleeop/snapshot"
+Repository = "https://github.com/Sparkleeop/snapshot"
+Issues = "https://github.com/Sparkleeop/snapshot/issues"
+
+[project.scripts]
+snap = "snapshot.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/snapshot"]

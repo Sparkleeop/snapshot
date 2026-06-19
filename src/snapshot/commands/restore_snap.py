@@ -1,7 +1,7 @@
-from config import *
-from utils.file_manager import unzip_dir, clear_contents
-from utils.metadata_loader import load_metadata
-from utils.console import (
+from snapshot.config import snap_dir, current_dir, os
+from snapshot.utils.file_manager import unzip_dir, clear_contents
+from snapshot.utils.metadata_loader import load_metadata
+from snapshot.utils.console import (
     console, success, error, warning, info,
     PRIMARY, WARNING, ERROR, MUTED,
 )

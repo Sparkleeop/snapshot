@@ -1,4 +1,4 @@
-from config import *
+from snapshot.config import current_dir, os
 from fnmatch import fnmatch
 
 def load_ignore_patterns():

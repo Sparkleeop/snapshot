@@ -1,5 +1,5 @@
-from config import *
-from utils.snapignore import load_ignore_patterns, should_ignore
+from snapshot.config import current_dir, snap_dir, os
+from snapshot.utils.snapignore import load_ignore_patterns, should_ignore
 import zipfile, shutil
 from pathlib import Path
 

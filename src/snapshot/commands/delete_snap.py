@@ -1,6 +1,6 @@
-from config import *
-from utils.metadata_loader import load_metadata, save_metadata
-from utils.console import (
+from snapshot.config import snap_dir, os
+from snapshot.utils.metadata_loader import load_metadata, save_metadata
+from snapshot.utils.console import (
     console, success, error, warning, info,
     PRIMARY, WARNING, ERROR, MUTED,
 )

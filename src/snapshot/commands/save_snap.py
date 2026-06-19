@@ -1,7 +1,7 @@
-from config import snap_dir, current_dir, os, snapshots_dir
-from utils.metadata_loader import save_metadata, load_metadata
-from utils.file_manager import zip_dir
-from utils.console import console, success, error, info, PRIMARY, MUTED
+from snapshot.config import snap_dir, current_dir, os, snapshots_dir
+from snapshot.utils.metadata_loader import save_metadata, load_metadata
+from snapshot.utils.file_manager import zip_dir
+from snapshot.utils.console import console, success, error, info, PRIMARY, MUTED
 from datetime import datetime
 
 def snapshot(snap_message):

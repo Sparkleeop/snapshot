@@ -1,7 +1,23 @@
-/env
+# Virtual environments
+/env/
+/test_env/
+.venv/
+
+# Snap data
 .snapignore
-/.snap
-/__pycache__
-/commands/__pycache__
-/utils/__pycache__
-/test_env
+/.snap/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# IDE
+.vscode/
+.idea/

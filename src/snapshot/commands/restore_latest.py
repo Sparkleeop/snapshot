@@ -1,8 +1,8 @@
-from config import *
-from utils.metadata_loader import load_metadata
-from commands.restore_snap import restore
+from snapshot.config import snap_dir, os
+from snapshot.utils.metadata_loader import load_metadata
+from snapshot.commands.restore_snap import restore
 
-from utils.console import error
+from snapshot.utils.console import error
 
 def restore_latest(is_clean=False):
     if not os.path.exists(snap_dir):

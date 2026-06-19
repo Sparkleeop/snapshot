@@ -1,8 +1,8 @@
-from config import *
-from utils.metadata_loader import load_metadata
-from utils.file_manager import get_directory_size, human_size
+from snapshot.config import snap_dir, os
+from snapshot.utils.metadata_loader import load_metadata
+from snapshot.utils.file_manager import get_directory_size, human_size
 
-from utils.console import (
+from snapshot.utils.console import (
     console,
     error,
     PRIMARY,
