@@ -34,7 +34,7 @@ Create a snapshot:
 snap save "before authentication rewrite"
 ```
 
-List all snapshots:
+List all snapshots, you can also find <snap id> here:
 
 ```bash
 snap list
@@ -43,19 +43,31 @@ snap list
 View information about a snapshot:
 
 ```bash
-snap info 3
+snap info <snap id>
 ```
 
 Restore a snapshot:
 
 ```bash
-snap restore 3
+snap restore <snap id>
 ```
 
 Perform a clean restore (removes existing project files before restoring):
 
 ```bash
-snap restore 3 --clean
+snap restore <snap id> --clean
+```
+
+Delete a snapshot:
+
+```bash
+snap del <snap id>
+```
+
+Get the overall project statistics:
+
+```bash
+snap stats
 ```
 
 ## .snapignore

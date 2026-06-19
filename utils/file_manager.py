@@ -43,3 +43,13 @@ def clear_contents(dir_path):
 
         elif item.is_dir():
             shutil.rmtree(item)
+
+def get_directory_size(path):
+    total_size = 0
+    for dirpath, dirnames, filenames in os.walk(path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            # Skip symbolic links to avoid infinite loops or errors
+            if not os.path.islink(fp):
+                total_size += os.path.getsize(fp)
+    return total_size

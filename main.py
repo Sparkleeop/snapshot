@@ -1,4 +1,4 @@
-import os, argparse
+import argparse
 
 from commands.init import *
 from commands.list_snap import *
@@ -6,6 +6,8 @@ from commands.save_snap import *
 from commands.restore_snap import *
 from commands.info_snap import *
 from commands.delete_snap import *
+from commands.stats_snap import *
+
 from utils.console import print_help
 
 parser = argparse.ArgumentParser(
@@ -18,6 +20,7 @@ subparsers = parser.add_subparsers(dest="command")
 
 subparsers.add_parser("init")
 subparsers.add_parser("list")
+subparsers.add_parser("stats")
 
 save_parser = subparsers.add_parser("save")
 save_parser.add_argument("message")
@@ -43,11 +46,14 @@ elif args.command == "save":
 elif args.command == "restore":
     restore(args.snap_id, clean=args.clean)
 
-elif args.command == "del":
+elif args.command == "del" or "delete":
     delete(args.snap_id)
 
 elif args.command == "info":
     show_info(args.snap_id)
+
+elif args.command == "stats":
+    stats()
 
 elif args.command == "list":
     list_snap()
