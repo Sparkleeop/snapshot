@@ -73,7 +73,6 @@ node_modules
 
 ## Roadmap
 
-* [ ] Delete snapshots (`snap delete <id>`)
 * [ ] Compare snapshots (`snap diff <id1> <id2>`)
 * [ ] Snapshot export/import
 * [ ] Automatic snapshots
