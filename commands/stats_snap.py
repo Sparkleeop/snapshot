@@ -1,6 +1,6 @@
 from config import *
 from utils.metadata_loader import load_metadata
-from utils.file_manager import get_directory_size
+from utils.file_manager import get_directory_size, human_size
 
 from utils.console import (
     console,
@@ -10,15 +10,6 @@ from utils.console import (
 )
 from rich.table import Table
 from rich.panel import Panel
-
-
-def human_size(size):
-    for unit in ["B", "KB", "MB", "GB", "TB"]:
-        if size < 1024:
-            return f"{size:.1f} {unit}"
-        size /= 1024
-    return f"{size:.1f} PB"
-
 
 def stats():
 

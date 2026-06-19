@@ -58,6 +58,12 @@ Perform a clean restore (removes existing project files before restoring):
 snap restore <snap id> --clean
 ```
 
+Perform a restore to the latest snap:
+
+```bash
+snap restorelatest <--clean>
+```
+
 Delete a snapshot:
 
 ```bash

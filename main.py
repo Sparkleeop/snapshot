@@ -7,6 +7,7 @@ from commands.restore_snap import *
 from commands.info_snap import *
 from commands.delete_snap import *
 from commands.stats_snap import *
+from commands.restore_latest import *
 
 from utils.console import print_help
 
@@ -29,6 +30,9 @@ restore_parser = subparsers.add_parser("restore")
 restore_parser.add_argument("snap_id", type=int)
 restore_parser.add_argument("--clean", action="store_true")
 
+restore_latest_parser = subparsers.add_parser("restorelatest")
+restore_latest_parser.add_argument("--clean", action="store_true")
+
 info_parser = subparsers.add_parser("info")
 info_parser.add_argument("snap_id", type=int)
 
@@ -46,7 +50,10 @@ elif args.command == "save":
 elif args.command == "restore":
     restore(args.snap_id, clean=args.clean)
 
-elif args.command == "del" or "delete":
+elif args.command == "restorelatest":
+    restore_latest(is_clean=args.clean)
+
+elif args.command == "del":
     delete(args.snap_id)
 
 elif args.command == "info":

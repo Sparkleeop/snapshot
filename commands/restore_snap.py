@@ -50,7 +50,6 @@ def restore(snap_id, clean=False):
 
     console.print()
 
-
     confirmed = Confirm.ask(
         f"  [{PRIMARY}]Restore snapshot #{snap_id}?[/{PRIMARY}]",
         default=False,
@@ -59,7 +58,6 @@ def restore(snap_id, clean=False):
     if not confirmed:
         info("Restore cancelled.")
         return
-
 
     with console.status(
         f"[{PRIMARY}]  Restoring snapshot #{snap_id}…[/{PRIMARY}]",

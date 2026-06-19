@@ -53,3 +53,10 @@ def get_directory_size(path):
             if not os.path.islink(fp):
                 total_size += os.path.getsize(fp)
     return total_size
+
+def human_size(size):
+    for unit in ["B", "KB", "MB", "GB", "TB"]:
+        if size < 1024:
+            return f"{size:.1f} {unit}"
+        size /= 1024
+    return f"{size:.1f} PB"
